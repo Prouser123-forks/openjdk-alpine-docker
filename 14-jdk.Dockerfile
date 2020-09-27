@@ -140,3 +140,9 @@ RUN mkdir -p /lib /lib64 /usr/glibc-compat/lib/locale /usr/glibc-compat/lib64 /e
 		echo "Done!"; \
 		cd /; \
 		java -version;
+		java -Xshare:dump; \
+		apk add --no-cache ca-certificates binutils; \
+		wget -O app.jar https://papermc.io/api/v1/paper/1.15.2/latest/download; \
+		wget -O 2.app.jar https://papermc.io/api/v1/waterfall/1.15/latest/download; \
+		JDEPS=jdk.zipfs,jdk.crypto.ec,java.scripting,jdk.scripting.nashorn,$(jdeps --ignore-missing-deps --list-deps --multi-release 14 app.jar 2.app.jar | awk -F'/' '{print $1}' | tr -d '[[:blank:]]' | sed ':a;N;$!ba;s/\n/,/g'); \
+		_JAVA_OPTIONS="-Djdk.lang.Process.launchMechanism=vfork" jlink  --no-header-files --no-man-pages --compress=2 --strip-debug --module-path /opt/java/openjdk/jmods --add-modules $JDEPS --output /jlinked
