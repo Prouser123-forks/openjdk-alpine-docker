@@ -3,7 +3,7 @@ FROM alpine:3.12
 # Set env variables for java to work properly
 ENV JAVA_HOME=/opt/java/openjdk \
     PATH="/opt/java/openjdk/bin:$PATH" \
-	GLIBC_VERSION="2.31-r1"
+	GLIBC_VERSION="2.31-r2034"
 
 RUN mkdir -p /lib /lib64 /usr/glibc-compat/lib/locale /usr/glibc-compat/lib64 /etc; \
 	apk add --no-cache --virtual .fetch-deps curl binutils; \
@@ -27,7 +27,7 @@ RUN mkdir -p /lib /lib64 /usr/glibc-compat/lib/locale /usr/glibc-compat/lib64 /e
 			ESUM='458d091756500dc3013737aa182a14752b3d4ffc358d09532201874ffb8cae22'; \
 			BINARY_URL='https://github.com/AdoptOpenJDK/openjdk14-binaries/releases/download/jdk-14.0.1%2B7/OpenJDK14U-jdk_arm_linux_hotspot_14.0.1_7.tar.gz'; \
 			ZLIB_URL='http://ports.ubuntu.com/ubuntu-ports/pool/main/z/zlib/zlib1g_1.2.11.dfsg-2ubuntu1_armhf.deb'; \
-			GLIBC_ARCH='armhf'; \
+			GLIBC_ARCH='arm-linux-gnueabihf'; \
 			glibc_setup () { \
 				ln -s /usr/glibc-compat/lib/ld-linux-armhf.so.3 /lib/ld-linux-armhf.so.3; \
 				ln -s /usr/glibc-compat/lib/ld-linux-armhf.so.3 /lib64/ld-linux-armhf.so.3; \
@@ -87,7 +87,7 @@ RUN mkdir -p /lib /lib64 /usr/glibc-compat/lib/locale /usr/glibc-compat/lib64 /e
 			;; \
 		esac; \
 		# Download glibc from repo
-		wget -O- https://github.com/Prouser123/docker-glibc-multiarch-builder/releases/download/jcx-${GLIBC_VERSION}/glibc-bin-${GLIBC_VERSION}-${GLIBC_ARCH}.tar.gz | tar zxvf - -C /; \
+		wget -O- https://github.com/Prouser123-forks/docker-glibc-multiarch-builder/releases/download/jcx-${GLIBC_VERSION}/glibc-bin-${GLIBC_VERSION}-${GLIBC_ARCH}.tar.gz | tar zxvf - -C /; \
 		# Link glibc
 		glibc_setup; \
 		
