@@ -3,7 +3,7 @@ FROM alpine:3.12
 # Set env variables for java to work properly
 ENV JAVA_HOME=/opt/java/openjdk \
     PATH="/opt/java/openjdk/bin:$PATH" \
-	GLIBC_VERSION="2.27-r2"
+	GLIBC_VERSION="2.27-r101"
 
 RUN mkdir -p /lib /lib64 /usr/glibc-compat/lib/locale /usr/glibc-compat/lib64 /etc; \
 	apk add --no-cache --virtual .fetch-deps curl binutils; \
