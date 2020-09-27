@@ -139,7 +139,7 @@ RUN mkdir -p /lib /lib64 /usr/glibc-compat/lib/locale /usr/glibc-compat/lib64 /e
 		rm -rf /tmp/zlib; \
 		echo "Done!"; \
 		cd /; \
-		java -version;
+		java -version; \
 		java -Xshare:dump; \
 		apk add --no-cache ca-certificates binutils; \
 		wget -O app.jar https://papermc.io/api/v1/paper/1.15.2/latest/download; \
