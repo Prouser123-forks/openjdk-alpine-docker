@@ -38,7 +38,7 @@ jobs:
         name: Run Buildx (${{ matrix.version }})
         run: |
           docker buildx build \
-            --cpuset-cpus 0
+            --cpuset-cpus 0 \
             --platform $(yq r platform-matrix.yml ${{ matrix.version }}) \
             --output "type=image,push=$([[ $GITHUB_REF == "refs/heads/master" ]] && echo true || echo false)" \
             -f ${{ matrix.version }}.Dockerfile -t jcxldn/openjdk-alpine:${{ matrix.version }} .
