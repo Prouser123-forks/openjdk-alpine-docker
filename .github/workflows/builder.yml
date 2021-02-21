@@ -51,4 +51,4 @@ jobs:
             --build-arg VERSION=$(yq r platform-matrix.yml ${{ matrix.version }}.version) \
             --build-arg SLIM=$(yq r platform-matrix.yml ${{ matrix.version }}.slim) \
             --build-arg JDK78FIX=$(yq r platform-matrix.yml ${{ matrix.version }}.jdk78fix) \
-            -f Dockerfile -t jcxldn/openjdk-alpine:${{ matrix.version }} .
+            -f Dockerfile -t jcxldn/openjdk-adelie:${{ matrix.version }} .
