@@ -22,7 +22,7 @@ ARG JDK78FIX
 
 
 RUN mkdir -p /lib /lib64 /usr/glibc-compat/lib/locale /usr/glibc-compat/lib64 /etc; \
-	apk add --no-cache --virtual .fetch-deps curl binutils; \
+	apk add --no-cache --virtual .fetch-deps curl binutils wget libarchive-tools; \
 		ARCH="$(apk --print-arch)"; \
 		case "${ARCH}" in \
 		aarch64|arm64) \
