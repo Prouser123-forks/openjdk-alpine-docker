@@ -8,9 +8,12 @@
 # There are also incompatabilities with 8u275-b01 on armv7 (libatomic, then "Inconsistency detected by ld.so: dl-lookup.c: 110: check_match: Assertion `version->filename == NULL || ! _dl_name_match_p (version->filename, map)' failed!")
 # 8u265-b01 will be used instead
 
+
+# adelie-experiments: /bin/sh from my image not working on armv7? Removing for now...
+
 # JREs
 15-jre:
-  arch: "linux/amd64,linux/arm64,linux/arm/v7"
+  arch: "linux/amd64,linux/arm64"
   repo: "openjdk15-binaries"
   type: "OpenJDK15U-jre"
   tag: "jdk-15.0.2%2B7"
@@ -25,7 +28,7 @@
     amd64: "31af7efdb1cc0ffd001bc145c3d255266889ad6b502133283ae8bf233d11334c"
 
 14-jre:
-  arch: "linux/amd64,linux/arm64,linux/arm/v7"
+  arch: "linux/amd64,linux/arm64"
   repo: "openjdk14-binaries"
   type: "OpenJDK14U-jre"
   tag: "jdk-14.0.2%2B12"
@@ -40,7 +43,7 @@
     amd64: "1107845947da56e6bdad0da0b79210a079a74ec5c806f815ec5db9d09e1a9236"
 
 11-jre:
-  arch: "linux/amd64,linux/arm64,linux/arm/v7"
+  arch: "linux/amd64,linux/arm64"
   repo: "openjdk11-binaries"
   type: "OpenJDK11U-jre"
   tag: "jdk-11.0.10%2B9"
@@ -55,7 +58,7 @@
     amd64: "25fdcf9427095ac27c8bdfc82096ad2e615693a3f6ea06c700fca7ffb271131a"
 
 8-jre:
-  arch: "linux/amd64,linux/arm64,linux/arm/v7"
+  arch: "linux/amd64,linux/arm64"
   repo: "openjdk8-binaries"
   type: "OpenJDK8U-jre"
   tag: "jdk8u265-b01"
@@ -75,7 +78,7 @@
 # linux/s390x throws SIGILL, so has been disabled.
 # -------------------------
 14-jdk-slim:
-  arch: "linux/amd64,linux/arm64,linux/arm/v7"
+  arch: "linux/amd64,linux/arm64"
   repo: "openjdk14-binaries"
   type: "OpenJDK14U-jdk"
   tag: "jdk-14.0.2%2B12"
@@ -90,7 +93,7 @@
     amd64: "7d5ee7e06909b8a99c0d029f512f67b092597aa5b0e78c109bd59405bbfa74fe"
 
 15-jdk:
-  arch: "linux/amd64,linux/arm64,linux/arm/v7"
+  arch: "linux/amd64,linux/arm64"
   repo: "openjdk15-binaries"
   type: "OpenJDK15U-jdk"
   tag: "jdk-15.0.2%2B7"
@@ -105,7 +108,7 @@
     amd64: "94f20ca8ea97773571492e622563883b8869438a015d02df6028180dd9acc24d"
 
 14-jdk:
-  arch: "linux/amd64,linux/arm64,linux/arm/v7"
+  arch: "linux/amd64,linux/arm64"
   repo: "openjdk14-binaries"
   type: "OpenJDK14U-jdk"
   tag: "jdk-14.0.2%2B12"
@@ -120,7 +123,7 @@
     amd64: "7d5ee7e06909b8a99c0d029f512f67b092597aa5b0e78c109bd59405bbfa74fe"
 
 11-jdk:
-  arch: "linux/amd64,linux/arm64,linux/arm/v7"
+  arch: "linux/amd64,linux/arm64"
   repo: "openjdk11-binaries"
   type: "OpenJDK11U-jdk"
   tag: "jdk-11.0.10%2B9"
@@ -135,7 +138,7 @@
     amd64: "ae78aa45f84642545c01e8ef786dfd700d2226f8b12881c844d6a1f71789cb99"
 
 8-jdk:
-  arch: "linux/amd64,linux/arm64,linux/arm/v7"
+  arch: "linux/amd64,linux/arm64"
   repo: "openjdk8-binaries"
   type: "OpenJDK8U-jdk"
   tag: "jdk8u265-b01"
